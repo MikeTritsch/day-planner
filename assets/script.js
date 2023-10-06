@@ -1,10 +1,9 @@
-var currentDate = dayjs().format('dddd, MMMM D')
+var currentDate = dayjs().format('dddd, MMMM D');
 $('#currentDay').text(currentDate);
 
 
 var hourNine = $('#hour-9');
 var saveBtn = $('.saveBtn');
-var inputTest = $('.description');
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
