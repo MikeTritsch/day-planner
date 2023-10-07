@@ -120,9 +120,19 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
         $('.time-block').each(function () {
             var fieldHour = parseInt($(this).attr('id').split('-')[1]);
         console.log(fieldHour);
-        });
 
-        
+        if (currentTime < fieldHour) {
+            $('.time-block').addClass("past");
+        } else if (currentTime === fieldHour) {
+            $('.time-block').addClass("present");
+        } else {
+            $('.time-block').addClass("future");
+        }
+    });
+    };
+    hourConditionals();
+});
+
         // Utilizing the new variables above of currentTime and fieldHour you will then need to create a conditional
         // if (compare past with <) {
                 // Do something here with classes
@@ -131,9 +141,8 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
         // } else .....this would be future{
                 // Do the alternative option of the first two
         // }
-    };
-    hourConditionals();
-    // if (dayjs().format('hA') === $('#hour9').children().eq(0))
+
+            // if (dayjs().format('hA') === $('#hour9').children().eq(0))
     // TODO: Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. HINTS: How can the id
     // attribute of each time-block be used to conditionally add or remove the
@@ -145,4 +154,3 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
-});
