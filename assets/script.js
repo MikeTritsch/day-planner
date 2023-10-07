@@ -1,17 +1,6 @@
 var currentDate = dayjs().format('dddd, MMMM D');
 $('#currentDay').text(currentDate);
 
-
-var hourNine = $('#hour-9');
-var hourTen = $('#hour-10');
-var hourElev = $('#hour-11');
-var hourTwel = $('#hour-12');
-var hourOne = $('#hour-1');
-var hourTwo = $('#hour-2');
-var hourThree = $('#hour-3');
-var hourFour = $('#hour-4');
-var hourFive = $('#hour-5');
-var saveBtn = $('.saveBtn');
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -24,31 +13,122 @@ $(function () {
         localStorage.setItem("Hour 9", JSON.stringify($('#hour-9').children().eq(1).val()));
     });
 
-    function renderSchedule() {
+    function renderNine() {
         var hourStored = JSON.parse(localStorage.getItem("Hour 9"));
-        console.log(hourStored);
         if (hourStored !== null) {
             $('#hour-9').children().eq(1).val(hourStored);
         }
     }
-
-    renderSchedule();
+    renderNine();
     
-
     $('#hour-10').children().eq(2).click(function() {
         console.log($('#hour-10').children().eq(1).val());
-        localStorage.setItem("Hour 10", ($('#hour-10').children().eq(1).val()));
+        localStorage.setItem("Hour 10", JSON.stringify($('#hour-10').children().eq(1).val()));
     });
-    
 
+    function renderTen() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 10"));
+        if (hourStored !== null) {
+            $('#hour-10').children().eq(1).val(hourStored);
+        }
+    }
+    renderTen();
 
-    // TODO: Add a listener for click events on the save button. This code should
-    // use the id in the containing time-block as a key to save the user input in
-    // local storage. HINT: What does `this` reference in the click listener
-    // function? How can DOM traversal be used to get the "hour-x" id of the
-    // time-block containing the button that was clicked? How might the id be
-    // useful when saving the description in local storage?
-    //
+    $('#hour-11').children().eq(2).click(function() {
+        console.log($('#hour-11').children().eq(1).val());
+        localStorage.setItem("Hour 11", JSON.stringify($('#hour-11').children().eq(1).val()));
+    });
+
+    function renderElev() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 11"));
+        if (hourStored !== null) {
+            $('#hour-11').children().eq(1).val(hourStored);
+        }
+    }
+    renderElev();
+
+    $('#hour-12').children().eq(2).click(function() {
+        console.log($('#hour-12').children().eq(1).val());
+        localStorage.setItem("Hour 12", JSON.stringify($('#hour-12').children().eq(1).val()));
+    });
+
+    function renderTwelve() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 12"));
+        if (hourStored !== null) {
+            $('#hour-12').children().eq(1).val(hourStored);
+        }
+    }
+    renderTwelve();
+
+    $('#hour-1').children().eq(2).click(function() {
+        console.log($('#hour-1').children().eq(1).val());
+        localStorage.setItem("Hour 1", JSON.stringify($('#hour-1').children().eq(1).val()));
+    });
+
+    function renderOne() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 1"));
+        if (hourStored !== null) {
+            $('#hour-1').children().eq(1).val(hourStored);
+        }
+    }
+    renderOne();
+
+    $('#hour-2').children().eq(2).click(function() {
+        console.log($('#hour-2').children().eq(1).val());
+        localStorage.setItem("Hour 2", JSON.stringify($('#hour-2').children().eq(1).val()));
+    });
+
+    function renderTwo() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 2"));
+        if (hourStored !== null) {
+            $('#hour-2').children().eq(1).val(hourStored);
+        }
+    }
+    renderTwo();
+
+    $('#hour-3').children().eq(2).click(function() {
+        console.log($('#hour-3').children().eq(1).val());
+        localStorage.setItem("Hour 3", JSON.stringify($('#hour-3').children().eq(1).val()));
+    });
+
+    function renderThree() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 3"));
+        if (hourStored !== null) {
+            $('#hour-3').children().eq(1).val(hourStored);
+        }
+    }
+    renderThree();
+
+    $('#hour-4').children().eq(2).click(function() {
+        console.log($('#hour-4').children().eq(1).val());
+        localStorage.setItem("Hour 4", JSON.stringify($('#hour-4').children().eq(1).val()));
+    });
+
+    function renderFour() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 4"));
+        if (hourStored !== null) {
+            $('#hour-4').children().eq(1).val(hourStored);
+        }
+    }
+    renderFour();
+
+    $('#hour-5').children().eq(2).click(function() {
+        console.log($('#hour-5').children().eq(1).val());
+        localStorage.setItem("Hour 5", JSON.stringify($('#hour-5').children().eq(1).val()));
+    });
+
+    function renderFive() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 5"));
+        if (hourStored !== null) {
+            $('#hour-5').children().eq(1).val(hourStored);
+        }
+    }
+    renderFive();
+
+    console.log(dayjs().format('hA'));
+    console.log($('#hour-9').children().eq(0));
+
+    // if (dayjs().format('hA') === $('#hour9').children().eq(0))
     // TODO: Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. HINTS: How can the id
     // attribute of each time-block be used to conditionally add or remove the
