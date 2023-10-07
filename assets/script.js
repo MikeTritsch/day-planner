@@ -21,7 +21,24 @@ $(function () {
 
     $('#hour-9').children().eq(2).click(function() {
         console.log($('#hour-9').children().eq(1).val());
-    })
+        localStorage.setItem("Hour 9", JSON.stringify($('#hour-9').children().eq(1).val()));
+    });
+
+    function renderSchedule() {
+        var hourStored = JSON.parse(localStorage.getItem("Hour 9"));
+        console.log(hourStored);
+        if (hourStored !== null) {
+            $('#hour-9').children().eq(1).val(hourStored);
+        }
+    }
+
+    renderSchedule();
+    
+
+    $('#hour-10').children().eq(2).click(function() {
+        console.log($('#hour-10').children().eq(1).val());
+        localStorage.setItem("Hour 10", ($('#hour-10').children().eq(1).val()));
+    });
     
 
 
