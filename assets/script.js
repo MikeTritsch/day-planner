@@ -3,6 +3,14 @@ $('#currentDay').text(currentDate);
 
 
 var hourNine = $('#hour-9');
+var hourTen = $('#hour-10');
+var hourElev = $('#hour-11');
+var hourTwel = $('#hour-12');
+var hourOne = $('#hour-1');
+var hourTwo = $('#hour-2');
+var hourThree = $('#hour-3');
+var hourFour = $('#hour-4');
+var hourFive = $('#hour-5');
 var saveBtn = $('.saveBtn');
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -10,11 +18,12 @@ var saveBtn = $('.saveBtn');
 
 
 $(function () {
+
+    $('#hour-9').children().eq(2).click(function() {
+        console.log($('#hour-9').children().eq(1).val());
+    })
     
-    var inputTest = $('.description');
-    $('.saveBtn').click(function () {
-        console.log(inputTest.value);
-    });
+
 
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
