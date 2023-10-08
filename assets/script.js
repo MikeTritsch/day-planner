@@ -121,12 +121,12 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
             var fieldHour = parseInt($(this).attr('id').split('-')[1]);
         console.log(fieldHour);
 
-        if (currentTime < fieldHour) {
-            $('.time-block').addClass("past");
-        } else if (currentTime === fieldHour) {
-            $('.time-block').addClass("present");
-        } else {
-            $('.time-block').addClass("future");
+        if (fieldHour < currentTime) {
+            $(this).addClass("past");
+        } else if (fieldHour === currentTime) {
+            $(this).addClass("present");
+        } else if (fieldHour > currentTime) {
+            $(this).addClass("future");
         }
     });
     };
