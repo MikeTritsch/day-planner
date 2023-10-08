@@ -8,7 +8,6 @@ $(function () {
 
     // 9AM
     $('#hour-9').children().eq(2).click(function() {
-        console.log($('#hour-9').children().eq(1).val());
         localStorage.setItem("Hour 9", JSON.stringify($('#hour-9').children().eq(1).val()));
     });
     function renderNine() {
@@ -21,7 +20,6 @@ $(function () {
 
     // 10AM
     $('#hour-10').children().eq(2).click(function() {
-        console.log($('#hour-10').children().eq(1).val());
         localStorage.setItem("Hour 10", JSON.stringify($('#hour-10').children().eq(1).val()));
     });
     function renderTen() {
@@ -34,7 +32,6 @@ $(function () {
 
     // 11AM
     $('#hour-11').children().eq(2).click(function() {
-        console.log($('#hour-11').children().eq(1).val());
         localStorage.setItem("Hour 11", JSON.stringify($('#hour-11').children().eq(1).val()));
     });
     function renderElev() {
@@ -47,7 +44,6 @@ $(function () {
 
     // 12AM
     $('#hour-12').children().eq(2).click(function() {
-        console.log($('#hour-12').children().eq(1).val());
         localStorage.setItem("Hour 12", JSON.stringify($('#hour-12').children().eq(1).val()));
     });
     function renderTwelve() {
@@ -60,7 +56,6 @@ $(function () {
 
     // 1PM   
     $('#hour-13').children().eq(2).click(function() {
-        console.log($('#hour-13').children().eq(1).val());
         localStorage.setItem("Hour 1", JSON.stringify($('#hour-13').children().eq(1).val()));
     });
     function renderOne() {
@@ -73,7 +68,6 @@ $(function () {
 
     // 2PM
     $('#hour-14').children().eq(2).click(function() {
-        console.log($('#hour-14').children().eq(1).val());
         localStorage.setItem("Hour 2", JSON.stringify($('#hour-14').children().eq(1).val()));
     });
     function renderTwo() {
@@ -86,7 +80,6 @@ $(function () {
 
     // 3PM
     $('#hour-15').children().eq(2).click(function() {
-        console.log($('#hour-15').children().eq(1).val());
         localStorage.setItem("Hour 3", JSON.stringify($('#hour-15').children().eq(1).val()));
     });
     function renderThree() {
@@ -99,7 +92,6 @@ $(function () {
 
     // 4PM
     $('#hour-16').children().eq(2).click(function() {
-        console.log($('#hour-16').children().eq(1).val());
         localStorage.setItem("Hour 4", JSON.stringify($('#hour-16').children().eq(1).val()));
     });
     function renderFour() {
@@ -112,7 +104,6 @@ $(function () {
 
     // 5PM
     $('#hour-17').children().eq(2).click(function() {
-        console.log($('#hour-17').children().eq(1).val());
     localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val()));
     });
     function renderFive() {
@@ -128,10 +119,8 @@ $(function () {
     // Parsing hour ID to isolate the number associated with each ID
     function hourConditionals() {
         var currentTime = dayjs().hour();
-        console.log(currentTime);
         $('.time-block').each(function () {
             var fieldHour = parseInt($(this).attr('id').split('-')[1]);
-        console.log(fieldHour);
 
     // If comparisons to determine past, future, present
         if (fieldHour < currentTime) {
