@@ -1,9 +1,12 @@
-var currentDate = dayjs().format('dddd, MMMM D');
-$('#currentDay').text(currentDate);
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
+    
+    // dayjs function to set current date
+    var currentDate = dayjs().format('dddd, MMMM D');
+    $('#currentDay').text(currentDate);
+
+    // localStorage Functions
+
+    // 9AM
     $('#hour-9').children().eq(2).click(function() {
         console.log($('#hour-9').children().eq(1).val());
         localStorage.setItem("Hour 9", JSON.stringify($('#hour-9').children().eq(1).val()));
@@ -16,6 +19,7 @@ $(function () {
     }
     renderNine();
 
+    // 10AM
     $('#hour-10').children().eq(2).click(function() {
         console.log($('#hour-10').children().eq(1).val());
         localStorage.setItem("Hour 10", JSON.stringify($('#hour-10').children().eq(1).val()));
@@ -28,6 +32,7 @@ $(function () {
     }
     renderTen();
 
+    // 11AM
     $('#hour-11').children().eq(2).click(function() {
         console.log($('#hour-11').children().eq(1).val());
         localStorage.setItem("Hour 11", JSON.stringify($('#hour-11').children().eq(1).val()));
@@ -40,6 +45,7 @@ $(function () {
     }
     renderElev();
 
+    // 12AM
     $('#hour-12').children().eq(2).click(function() {
         console.log($('#hour-12').children().eq(1).val());
         localStorage.setItem("Hour 12", JSON.stringify($('#hour-12').children().eq(1).val()));
@@ -52,6 +58,7 @@ $(function () {
     }
     renderTwelve();
 
+    // 1PM   
     $('#hour-13').children().eq(2).click(function() {
         console.log($('#hour-13').children().eq(1).val());
         localStorage.setItem("Hour 1", JSON.stringify($('#hour-13').children().eq(1).val()));
@@ -64,6 +71,7 @@ $(function () {
     }
     renderOne();
 
+    // 2PM
     $('#hour-14').children().eq(2).click(function() {
         console.log($('#hour-14').children().eq(1).val());
         localStorage.setItem("Hour 2", JSON.stringify($('#hour-14').children().eq(1).val()));
@@ -76,6 +84,7 @@ $(function () {
     }
     renderTwo();
 
+    // 3PM
     $('#hour-15').children().eq(2).click(function() {
         console.log($('#hour-15').children().eq(1).val());
         localStorage.setItem("Hour 3", JSON.stringify($('#hour-15').children().eq(1).val()));
@@ -88,6 +97,7 @@ $(function () {
     }
     renderThree();
 
+    // 4PM
     $('#hour-16').children().eq(2).click(function() {
         console.log($('#hour-16').children().eq(1).val());
         localStorage.setItem("Hour 4", JSON.stringify($('#hour-16').children().eq(1).val()));
@@ -100,10 +110,10 @@ $(function () {
     }
     renderFour();
 
+    // 5PM
     $('#hour-17').children().eq(2).click(function() {
         console.log($('#hour-17').children().eq(1).val());
-
-localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val()));
+    localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val()));
     });
     function renderFive() {
         var hourStored = JSON.parse(localStorage.getItem("Hour 5"));
@@ -113,7 +123,9 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
     }
     renderFive();
 
+    // PAST, PRESENT, FUTURE CONDITIONALS
 
+    // Parsing hour ID to isolate the number associated with each ID
     function hourConditionals() {
         var currentTime = dayjs().hour();
         console.log(currentTime);
@@ -121,6 +133,7 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
             var fieldHour = parseInt($(this).attr('id').split('-')[1]);
         console.log(fieldHour);
 
+    // If comparisons to determine past, future, present
         if (fieldHour < currentTime) {
             $(this).addClass("past");
         } else if (fieldHour === currentTime) {
@@ -132,25 +145,3 @@ localStorage.setItem("Hour 5", JSON.stringify($('#hour-17').children().eq(1).val
     };
     hourConditionals();
 });
-
-        // Utilizing the new variables above of currentTime and fieldHour you will then need to create a conditional
-        // if (compare past with <) {
-                // Do something here with classes
-        // } else if (compare present with ===) {
-                // Do something with classes
-        // } else .....this would be future{
-                // Do the alternative option of the first two
-        // }
-
-            // if (dayjs().format('hA') === $('#hour9').children().eq(0))
-    // TODO: Add code to apply the past, present, or future class to each time
-    // block by comparing the id to the current hour. HINTS: How can the id
-    // attribute of each time-block be used to conditionally add or remove the
-    // past, present, and future classes? How can Day.js be used to get the
-    // current hour in 24-hour time?
-    //
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements. HINT: How can the id
-    // attribute of each time-block be used to do this?
-    //
-    // TODO: Add code to display the current date in the header of the page.
