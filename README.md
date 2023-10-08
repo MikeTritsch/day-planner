@@ -49,7 +49,7 @@ There are two ways to remove events.
 
 ## Credits
 
-Huge thank you to Jose Centurion for helping me consolidatet the conditional statements.
+Huge thank you to Jose Centurion for helping me consolidate the conditional statements.
 
 ## License
 
