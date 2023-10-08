@@ -1,102 +1,78 @@
-# day-planner
-Have a busy schedule? Let me help you organize your day!
+# Day Planner
 
-# 05 Third-Party APIs: Work Day Scheduler
+## Description
 
-## Your Task
+The Day Planner App is a user-friendly and efficient tool designed to help you organize your day, stay on top of your tasks, and make the most out of your time. With its intuitive interface and utilization of local storage, this app is perfect for individuals looking to boost their productivity and manage their daily schedules effectively. This app provides real time based updated to follow you along during the 9-5 workday. On top of wanting to build my JavaScript and jQuery skills, this project was born out of a necessity to have a customizable day planner that exists on the web. I learned how to traverse the DOM using jQuery methods and time based events using dayJS.
 
-Create a simple calendar application that allows a user to save events for each hour of a typical working day (9am&ndash;5pm) by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Links
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+[Deployed Page](https://miketritsch.github.io/day-planner/)
 
-## User Story
+[GitHub Repo](https://github.com/MikeTritsch/day-planner)
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+## What comes next? and other issues...
 
-## Acceptance Criteria
+Going into this challenge, I was slightly lost in traversing jQuery. Thanks to their documentation, I was able to figure out what I needed to do to get this up and running.
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours of 9am&ndash;5pm
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+Moving forward, I'd like to continue practicing code consolidation. As you can see in my script.js file, specifically my localStorage functions, I have the same function repeated 8 times, which I'm sure can be streamlined.
 
-The following animation demonstrates the application functionality:
+## Installation
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+N/A
 
-## Grading Requirements
+## Usage
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![Overview Screenshot](./assets/images/demo.png)
 
-This Challenge is graded based on the following criteria:
+Upon loading the page for the first time, you will be met with an empty 9AM to 5PM schedule divided into hourly sections.
 
-### Technical Acceptance Criteria: 40%
+Here is the color code breakdown:
 
-* Satisfies all of the above acceptance criteria plus the following:
+    -Green are future hours
 
-  * Uses a date utility library to work with date and time
+    -Red is present hour
 
-### Deployment: 32%
+    -Gray is/are the past hour(s).
 
-* Application deployed at live URL
+To add events, simply click on the space next to the time slot and add your events in whatever format you chose.
 
-* Application loads with no errors
+Once finished, click the blue SAVE ICON on the right side of the entry space.
+Clicking save will ensure your events are saved to your local storage, making them stick around after you close or refresh the page.
 
-* Application GitHub URL submitted
+There are two ways to remove events.
 
-* GitHub repo contains application code
+1. Clear your local storage and then refresh (open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows))
 
-### Application Quality: 15%
+2. Remove the text from the time slots
 
-* Application user experience is intuitive and easy to navigate
+![Demo Gif](./assets/images/demo.gif)
 
-* Application user interface style is clean and polished
+## Credits
 
-* Application resembles the mock-up functionality provided in the Challenge instructions
+Huge thank you to Jose Centurion for helping me consolidatet the conditional statements.
 
-### Repository Quality: 13%
+## License
 
-* Repository has a unique name
+MIT License
 
-* Repository follows best practices for file structure and naming conventions
+Copyright (c) 2023 Mike Tritsch
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* Repository contains multiple descriptive commit messages
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Repository contains quality README file with description, screenshot, and link to deployed application
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+---
